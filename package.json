@@ -1,0 +1,16 @@
+{
+  "name": "minicadjs",
+  "version": "1.0.0",
+  "description": "mini cad project",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "author": "f33dir",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "electron": "^14.0.1"
+  }
+}
