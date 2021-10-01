@@ -11,7 +11,6 @@ function createWindow() {
     })
     win.loadFile('index.html');
 }
-
 app.whenReady().then(() => {
     createWindow()
     app.on('activate', function () {
