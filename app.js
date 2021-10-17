@@ -1,6 +1,7 @@
 const {app, BrowserWindow} = require('electron')
     const url = require("url");
     const path = require("path");
+const { Menu } = require('electron/main');
 
     let mainWindow
 
@@ -37,3 +38,5 @@ const {app, BrowserWindow} = require('electron')
     app.on('activate', function () {
       if (mainWindow === null) createWindow()
     })
+
+    Menu.setApplicationMenu(null);
