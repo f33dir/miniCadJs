@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { ConstructionmanagerService } from 'src/app/services/constructionmanager.service';
+import { RodEntity } from 'src/app/Models/rodentity';
 @Component({
   selector: 'app-testlist',
   templateUrl: './testlist.component.html',
@@ -7,24 +9,18 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class TestlistComponent implements OnInit {
 
-  movies = [
-    'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith',
-    'Episode IV - A New Hope',
-    'Episode V - The Empire Strikes Back',
-    'Episode VI - Return of the Jedi',
-    'Episode VII - The Force Awakens',
-    'Episode VIII - The Last Jedi',
-    'Episode IX – The Rise of Skywalker'
-  ];
+  rod!: RodEntity[];
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.rod, event.previousIndex, event.currentIndex);
+    console.log(this.rod);
   }
-  constructor() { }
+  constructor(private construction: ConstructionmanagerService) { }
 
   ngOnInit(): void {
+    this.construction.getSegments().subscribe((segments)=>{
+      this.rod = segments; 
+    })
   }
 
 }

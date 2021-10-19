@@ -19,7 +19,9 @@ import { TextdropdownComponent } from './components/textdropdown/textdropdown.co
 import { TestlistComponent } from './components/testlist/testlist.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {DragDropModule } from '@angular/cdk/drag-drop'
+import {DragDropModule } from '@angular/cdk/drag-drop';
+import { SegmentListElementComponent } from './components/segment-list-element/segment-list-element.component';
+import { SegmentListForceComponent } from './components/segment-list-force/segment-list-force.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,9 @@ import {DragDropModule } from '@angular/cdk/drag-drop'
     ResultComponent,
     TextbuttonComponent,
     TextdropdownComponent,
-    TestlistComponent
+    TestlistComponent,
+    SegmentListElementComponent,
+    SegmentListForceComponent
   ],
   imports: [
     BrowserModule,
