@@ -1,0 +1,6 @@
+.sidebar{
+    background-color: rgb(68, 68, 68);
+    height: 100%;
+    width: 100%;
+    position: fixed;   
+}

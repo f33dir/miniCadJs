@@ -8,6 +8,8 @@ import { Component, NgModule, OnInit, Input ,Output,EventEmitter} from '@angular
 export class ButtonComponent implements OnInit {
   @Input()
   text!: string;
+  @Input()
+  color!: string;
   @Output() outputClick = new EventEmitter();
   constructor() { }
   ngOnInit(): void {

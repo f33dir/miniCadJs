@@ -1,0 +1,5 @@
+<div class="col-4 sidebar">
+  <div cdkDropList class="example-list" (cdkDropListDropped)="entityListMoved($event)">
+    <div class="example-box" *ngFor="let movie of segments" cdkDrag>{{movie}}</div>
+  </div>
+</div>
