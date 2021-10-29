@@ -13,13 +13,14 @@ export class TestlistComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.rod, event.previousIndex, event.currentIndex);
-    console.log(this.rod);
+    console.log("Hello");
   }
   constructor(private construction: ConstructionmanagerService) { }
 
   ngOnInit(): void {
     this.construction.getSegments().subscribe((segments)=>{
       this.rod = segments; 
+      
     })
   }
 

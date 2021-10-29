@@ -2,14 +2,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { RodEntity } from 'src/app/Models/rodentity';
 import { RodSegment } from 'src/app/Models/rodsegment';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 @Component({
 selector: 'app-segment-list-element',
   templateUrl: './segment-list-element.component.html',
   styleUrls: ['./segment-list-element.component.css']
 })
 export class SegmentListElementComponent implements OnInit {
-  faCoffee = faCoffee;
+  faCoffee = faArrowAltCircleDown;
   @Input()
   modelInput! :RodEntity;
   public isCollapsed = false;

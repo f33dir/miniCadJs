@@ -1,5 +1,5 @@
 .example-list {
-    width: 500px;
+    width: 100%;
     max-width: 100%;
     border: solid 1px #ccc;
     min-height: 60px;
@@ -10,12 +10,12 @@
   }
   
   .example-box {
-    padding: 20px 10px;
+    padding: 0px 0px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
