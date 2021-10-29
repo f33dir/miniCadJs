@@ -1,0 +1,42 @@
+<!-- <form [formGroup]="formGroup" >
+    <label for="first-name">S: </label>
+    <div class="col-12">
+        <input id="first-name"  type="text" formControlName="S">
+    </div>
+    <label for="last-name">L: </label>
+    <div class="col-12">
+        <input id="last-name" type="text" formControlName="L">
+    </div>
+    
+    <label for="last-name">Force: </label>
+    <div class="col-12">
+        <input id="last-name" type="text" formControlName="force">
+    </div>
+</form> -->
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Featured
+        <button style="float: right;" type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><fa-icon [icon]="faCoffee"></fa-icon>
+        </button>
+    </div>
+
+    <div  id="collapseBasic" [collapse]="isCollapsed" class="card-body">
+        <form [formGroup]="formGroup" >
+            <label for="first-name">S: </label>
+            <div class="col-12">
+                <input id="first-name"  type="text" formControlName="S">
+            </div>
+            <label for="last-name">L: </label>
+            <div class="col-12">
+                <input id="last-name" type="text" formControlName="L">
+            </div>
+            
+            <label for="last-name">Force: </label>
+            <div class="col-12">
+                <input id="last-name" type="text" formControlName="force">
+            </div>
+        </form>
+    </div>
+</div>

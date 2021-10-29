@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './components/button/button.component';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { CollapseModule} from 'ngx-bootstrap/collapse'
 import { HeaderComponent } from './components/header/header.component';
 import { NgxElectronModule } from 'ngx-electron';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -21,7 +22,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DragDropModule } from '@angular/cdk/drag-drop';
 import { SegmentListElementComponent } from './components/segment-list-element/segment-list-element.component';
-import { SegmentListForceComponent } from './components/segment-list-force/segment-list-force.component'
+import { SegmentListForceComponent } from './components/segment-list-force/segment-list-force.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,8 @@ import { SegmentListForceComponent } from './components/segment-list-force/segme
     FormsModule,
     HttpClientModule,
     DragDropModule ,
+    CollapseModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
