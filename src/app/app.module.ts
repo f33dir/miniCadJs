@@ -23,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DragDropModule } from '@angular/cdk/drag-drop';
 import { SegmentListElementComponent } from './components/segment-list-element/segment-list-element.component';
 import { SegmentListForceComponent } from './components/segment-list-force/segment-list-force.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RodviewComponent } from './components/rodview/rodview.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     TextdropdownComponent,
     TestlistComponent,
     SegmentListElementComponent,
-    SegmentListForceComponent
+    SegmentListForceComponent,
+    RodviewComponent
   ],
   imports: [
     BrowserModule,

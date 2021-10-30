@@ -1,9 +1,9 @@
 
 <div class="card " style="width:100%;">
     <div class="card-header p-1 pl-2 " style="line-height: 36px">
-        Featured
+        Стержень
         <button style="float: right;" type="button" class="btn btn-primary btn-xs" (click)="isCollapsed = !isCollapsed"
-            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><fa-icon [icon]="faCoffee"></fa-icon>
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><fa-icon [icon]="faArrowDown"></fa-icon>
         </button>
     </div>
 
@@ -11,16 +11,16 @@
         <form [formGroup]="formGroup" >
             <div class="col-12">
                 <label for="first-name" class="d-block mb-0">S: </label>
-                <input id="first-name"  type="text" class="w-100" formControlName="S">
+                <input id="first-name"  type="number" class="w-100" formControlName="s">
             </div>
             <div class="col-12">
                 <label for="last-name" class="d-block mb-0">L: </label>
-                <input id="last-name" type="text" class="w-100" formControlName="L">
+                <input id="last-name" type="number" class="w-100" formControlName="l">
             </div>
             
             <div class="col-12">
                 <label for="last-name" class="d-block mb-0">Force: </label>
-                <input id="last-name" type="text" class="w-100" formControlName="force">
+                <input id="last-name" type="number" class="w-100" formControlName="force">
             </div>
         </form>
     </div>

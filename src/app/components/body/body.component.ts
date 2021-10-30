@@ -12,7 +12,7 @@ export class BodyComponent implements OnInit {
   segments!: RodEntity[];
   ngOnInit(): void {
     this.construction.getSegments().subscribe((segments)=>{
-      this.segments = segments; 
+      this.segments = segments.segments; 
     })
   }
   entityListMoved(event:Event){

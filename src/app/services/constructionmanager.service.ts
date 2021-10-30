@@ -25,11 +25,17 @@ export class ConstructionmanagerService {
     var g = new Force();
     g.id=229;
     g.type = "force";
-    g.forceVector= -1;
+    g.force= -1;
     this.rod.segments.push(g);
+    this.getSegments().subscribe((segments)=>{
+      console.log(segments);
+    })
   }
-  getSegments():Observable<RodEntity[]>{
-    const segments = of(this.rod.segments);
+  logRod(){
+    console.log(this.rod)
+  }
+  getSegments():Observable<Rod>{
+    const segments = of(this.rod);
     
     return segments; 
   }

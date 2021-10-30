@@ -1,1 +1,18 @@
-<p>segment-list-force works!</p>
+
+<div class="card " style="width:100%;">
+    <div class="card-header p-1 pl-2 " style="line-height: 36px">
+        Точечное усилие
+        <button style="float: right;" type="button" class="btn btn-primary btn-xs" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><fa-icon [icon]="faArrowDown"></fa-icon>
+        </button>
+    </div>
+
+    <div  id="collapseBasic" [collapse]="isCollapsed" class="card-body">
+        <form [formGroup]="formGroup" >
+            <div class="col-12">
+                <label for="first-name" class="d-block mb-0">Force: </label>
+                <input id="first-name"  type="number" class="w-100" formControlName="force">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,10 +1,15 @@
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let segment of rod" cdkDrag>
+  <div class="example-box" *ngFor="let segment of rod.segments" cdkDrag>
     <div *ngIf="segment.type === 'rod';else force">
       <app-segment-list-element [modelInput]=segment ></app-segment-list-element>
     </div>
     <ng-template #force>
-      <app-segment-list-force></app-segment-list-force>
+      <app-segment-list-force [modelInput]=segment></app-segment-list-force>
     </ng-template>
   </div>
+</div>
+<div>
+  <button (click)="printObject($event)">
+sadf
+  </button>
 </div>

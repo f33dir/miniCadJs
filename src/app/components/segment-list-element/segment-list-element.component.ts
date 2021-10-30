@@ -9,24 +9,25 @@ selector: 'app-segment-list-element',
   styleUrls: ['./segment-list-element.component.css']
 })
 export class SegmentListElementComponent implements OnInit {
-  faCoffee = faArrowAltCircleDown;
+  faArrowDown = faArrowAltCircleDown;
   @Input()
   modelInput! :RodEntity;
-  public isCollapsed = false;
+  public isCollapsed = true;
   model!:RodSegment
   formGroup: FormGroup= this.fb.group({
       id:[''],
       type:[''],
-      S:[''],
+      s:[''],
       l:[''],
       force:['']})
   constructor(private fb: FormBuilder) { 
-   
+    
   }
   
   ngOnInit(): void {
     this.model = this.modelInput as RodSegment;
     this.bindModelToForm(this.model,this.formGroup)
+    this.faArrowDown = faArrowAltCircleDown;
   }
   bindModelToForm(model: any, form: FormGroup) {
     const keys = Object.keys(form.controls);
