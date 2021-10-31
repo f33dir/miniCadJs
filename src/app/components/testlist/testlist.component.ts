@@ -12,9 +12,12 @@ import { of } from 'rxjs';
 export class TestlistComponent implements OnInit {
 
   rod!: Rod;
-
+  
   drop(event: CdkDragDrop<string[]>) {
+    let segs = this.rod;
+
     moveItemInArray(this.rod.segments, event.previousIndex, event.currentIndex);
+    this.construction.setSegments(segs);
     console.log("Hello");
   }
   constructor(private construction: ConstructionmanagerService) { }
@@ -28,6 +31,7 @@ export class TestlistComponent implements OnInit {
     g.subscribe((res)=>{console.log(res)})
   }
   printObject(event?: MouseEvent):void{
+    this.construction.addElement();
     this.construction.logRod();
   }
 }

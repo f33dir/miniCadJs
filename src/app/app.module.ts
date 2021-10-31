@@ -24,7 +24,8 @@ import {DragDropModule } from '@angular/cdk/drag-drop';
 import { SegmentListElementComponent } from './components/segment-list-element/segment-list-element.component';
 import { SegmentListForceComponent } from './components/segment-list-force/segment-list-force.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RodviewComponent } from './components/rodview/rodview.component'
+import { RodviewComponent } from './components/rodview/rodview.component';
+import { RodviewboxComponent } from './components/rodviewbox/rodviewbox.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { RodviewComponent } from './components/rodview/rodview.component'
     TestlistComponent,
     SegmentListElementComponent,
     SegmentListForceComponent,
-    RodviewComponent
+    RodviewComponent,
+    RodviewboxComponent
   ],
   imports: [
     BrowserModule,

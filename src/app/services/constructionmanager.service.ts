@@ -4,14 +4,19 @@ import { RodEntity } from '../Models/rodentity';
 import { RodSegment } from '../Models/rodsegment';
 import { Observable , of } from 'rxjs';
 import { Force } from '../Models/force';
+import { time, timeStamp } from 'console';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConstructionmanagerService {
+  private text:string = "12343";
+  private comment = of(this.text);
   private rod!:Rod;
+  private segments!:Observable<Rod>; 
   constructor() {
     this.rod = new Rod();
+    this.segments = of(this.rod);
     var f = new RodSegment();
     f.S =228;
     f.id=228;
@@ -27,17 +32,25 @@ export class ConstructionmanagerService {
     g.type = "force";
     g.force= -1;
     this.rod.segments.push(g);
-    this.getSegments().subscribe((segments)=>{
-      console.log(segments);
+    this.comment.subscribe((text)=>{
+      console.log("hi");
     })
   }
   logRod(){
     console.log(this.rod)
   }
   getSegments():Observable<Rod>{
-    const segments = of(this.rod);
-    
-    return segments; 
+    return this.segments; 
+  }
+  setSegments(input: Rod):void{
+    this.rod = input;
+  }
+  addElement(){
+    var f = new RodSegment();
+    f.S =228;
+    f.id=228;
+    f.type = "rod";
+    this.rod.segments.push(f);
   }
 }
  
