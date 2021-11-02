@@ -16,7 +16,7 @@ export class RodviewComponent implements OnInit {
   private ctx!: ElementRef<HTMLCanvasElement>;
   ngOnInit(): void {
     this.construction.getSegments().subscribe((obj)=>{
-      debugger;
+      // debugger;
       this.rod = obj; 
       console.log(this.rod);
       this.canvas.nativeElement.getContext('2d')?.fillText(this.rod.segments.length.toString(),100,100);

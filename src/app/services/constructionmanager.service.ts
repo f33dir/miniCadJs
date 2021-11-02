@@ -45,10 +45,16 @@ export class ConstructionmanagerService {
   setSegments(input: Rod):void{
     this.rod = input;
   }
-  addElement(){
+  addRodSegment(){
     var f = new RodSegment();
     f.S =228;
-    f.id=228;
+    f.id=this.rod.segments.length+1;
+    f.type = "rod";
+    this.rod.segments.push(f);
+  }
+  addForce(){
+    var f = new Force();
+    f.id=this.rod.segments.length+1;
     f.type = "rod";
     this.rod.segments.push(f);
   }

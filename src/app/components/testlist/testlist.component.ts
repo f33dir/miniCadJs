@@ -12,7 +12,7 @@ import { of } from 'rxjs';
 export class TestlistComponent implements OnInit {
 
   rod!: Rod;
-  
+
   drop(event: CdkDragDrop<string[]>) {
     let segs = this.rod;
 
@@ -30,8 +30,12 @@ export class TestlistComponent implements OnInit {
     const  g = of(this.rod);
     g.subscribe((res)=>{console.log(res)})
   }
-  printObject(event?: MouseEvent):void{
-    this.construction.addElement();
+  addSegment(event?: MouseEvent):void{
+    this.construction.addRodSegment();
+    this.construction.logRod();
+  }
+  addForce(event?: MouseEvent):void{
+    this.construction.addForce();
     this.construction.logRod();
   }
 }

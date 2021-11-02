@@ -9,10 +9,10 @@ import { ConstructionmanagerService } from 'src/app/services/constructionmanager
 export class BodyComponent implements OnInit {
 
   constructor(private construction: ConstructionmanagerService ) { }
-  segments!: RodEntity[];
+  Rod!: RodEntity[];
   ngOnInit(): void {
     this.construction.getSegments().subscribe((segments)=>{
-      this.segments = segments.segments; 
+      this.Rod = segments.segments; 
     })
   }
   entityListMoved(event:Event){
