@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Rod } from 'src/app/Models/rod';
 import { RodEntity } from 'src/app/Models/rodentity';
 import { ConstructionmanagerService } from 'src/app/services/constructionmanager.service';
 @Component({
@@ -9,13 +10,10 @@ import { ConstructionmanagerService } from 'src/app/services/constructionmanager
 export class BodyComponent implements OnInit {
 
   constructor(private construction: ConstructionmanagerService ) { }
-  Rod!: RodEntity[];
+  Rod!: Rod;
   ngOnInit(): void {
     this.construction.getSegments().subscribe((segments)=>{
-      this.Rod = segments.segments; 
+      this.Rod  = segments; 
     })
-  }
-  entityListMoved(event:Event){
-
   }
 }

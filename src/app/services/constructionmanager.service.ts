@@ -46,16 +46,16 @@ export class ConstructionmanagerService {
     this.rod = input;
   }
   addRodSegment(){
-    var f = new RodSegment();
+    let f = new RodSegment();
     f.S =228;
     f.id=this.rod.segments.length+1;
     f.type = "rod";
     this.rod.segments.push(f);
   }
   addForce(){
-    var f = new Force();
+    let f = new Force();
     f.id=this.rod.segments.length+1;
-    f.type = "rod";
+    f.type = "force";
     this.rod.segments.push(f);
   }
 }

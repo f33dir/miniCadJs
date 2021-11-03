@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { RodEntity } from 'src/app/Models/rodentity';
+import { RodSegment } from 'src/app/Models/rodsegment';
 
 @Component({
   selector: 'app-rodviewbox',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rodviewbox.component.css']
 })
 export class RodviewboxComponent implements OnInit {
+  @Input()
+  segment!: RodEntity;
   constructor() { }
   ngOnInit(): void {
     

@@ -1,1 +1,5 @@
-<p>{{rod.segments.length}}</p>><canvas #canvas></canvas>
+<div class="d-flex display: flex!important; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: center;">
+    <div *ngFor="let seg of rod.segments">
+        <app-rodviewbox [segment]=seg></app-rodviewbox>
+    </div>
+</div>
