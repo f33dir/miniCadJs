@@ -6,7 +6,7 @@ export class RodSegment implements RodEntity{
     id!: number;
     type!: string;
     S!:number;
-    L!:number;
+    A!:number;
     force!: number;
     lForce!:number;
     rForce!:number;

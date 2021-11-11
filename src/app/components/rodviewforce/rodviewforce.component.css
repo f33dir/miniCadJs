@@ -1,0 +1,23 @@
+.arrow-left{
+    margin-left: -64px;
+    margin-top: -32px;
+    z-index: 10;
+    position: absolute;
+    height: 64px;
+}
+.arrowcont{
+    width: 0;
+    height: 0;
+    position: relative;
+    overflow: visible;
+    direction: ltr;
+}
+.arrow-right{
+    margin-top: -32px;
+    margin-left: 0px;
+    z-index: 10;
+    position: absolute;
+    height: 64px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}

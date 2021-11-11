@@ -26,7 +26,13 @@ export class SegmentListForceComponent implements OnInit {
     this.faArrowDown = faArrowAltCircleDown;
   }
   bindModelToForm(model: any, form: FormGroup) {
+    let obj= model as Force;
     const keys = Object.keys(form.controls);
+    form.patchValue({
+      id: obj.id,
+      force: obj.force,
+      type: obj.type
+    })
     keys.forEach(key => {
         form.controls[key].valueChanges.subscribe(
             (newValue) => {

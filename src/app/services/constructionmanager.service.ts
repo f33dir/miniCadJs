@@ -18,12 +18,12 @@ export class ConstructionmanagerService {
     this.rod = new Rod();
     this.segments = of(this.rod);
     var f = new RodSegment();
-    f.S =228;
+    f.A =228;
     f.id=228;
     f.type = "rod";
     this.rod.segments.push(f);
     var f = new RodSegment();
-    f.S =228;
+    f.A =228;
     f.id=228;
     f.type = "rod";
     this.rod.segments.push(f);

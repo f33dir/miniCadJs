@@ -15,9 +15,7 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
     if(this._electronService.isElectronApp){
-      // this._electronService.
-      // let  menu = new Menu();
-      // this._electronService. Menu.setApplicationMenu(null);
+
     }
   }
 

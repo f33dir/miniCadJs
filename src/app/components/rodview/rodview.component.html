@@ -1,5 +1,13 @@
-<div class="d-flex display: flex!important; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: center;">
-    <div *ngFor="let seg of rod.segments">
-        <app-rodviewbox [segment]=seg></app-rodviewbox>
+<div class="d-flex display: flex!important  flex-direction: row flex-wrap: nowrap align-content: center justify-content: center;">
+    <div class="d-flex justify-content-center align-items-center" *ngFor="let seg of rod.segments" >
+        <div >
+            <div *ngIf="seg.type === 'rod';else force" >
+                <app-rodviewbox  [segment]=seg [minRodA]="minRodA" [minRodS]="minRodS"></app-rodviewbox>
+            </div>
+            <ng-template #force>
+                <app-rodviewforce [modelInput]=seg ></app-rodviewforce>
+            </ng-template>
+        </div>
     </div>
 </div>
+{{ngOnChange()}}

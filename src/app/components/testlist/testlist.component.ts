@@ -25,10 +25,8 @@ export class TestlistComponent implements OnInit {
   ngOnInit(): void {
     this.construction.getSegments().subscribe((segments)=>{
       this.rod = segments; 
-      console.log(this.rod)
+      console.log(this.rod);
     })
-    const  g = of(this.rod);
-    g.subscribe((res)=>{console.log(res)})
   }
   addSegment(event?: MouseEvent):void{
     this.construction.addRodSegment();
@@ -37,5 +35,10 @@ export class TestlistComponent implements OnInit {
   addForce(event?: MouseEvent):void{
     this.construction.addForce();
     this.construction.logRod();
+  }
+  putFields(){
+    this.rod.segments.forEach(element => {
+      
+    });
   }
 }

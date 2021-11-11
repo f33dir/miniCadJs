@@ -12,8 +12,8 @@ export class BodyComponent implements OnInit {
   constructor(private construction: ConstructionmanagerService ) { }
   Rod!: Rod;
   ngOnInit(): void {
-    this.construction.getSegments().subscribe((segments)=>{
-      this.Rod  = segments; 
+    this.construction.getSegments().subscribe((rod)=>{
+      this.Rod  = rod; 
     })
   }
 }

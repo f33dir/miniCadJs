@@ -17,8 +17,8 @@ export class SegmentListElementComponent implements OnInit {
   formGroup: FormGroup= this.fb.group({
       id:[''],
       type:[''],
-      s:[''],
-      l:[''],
+      A:[''],
+      S:[''],
       force:['']})
   constructor(private fb: FormBuilder) { 
     
@@ -30,7 +30,15 @@ export class SegmentListElementComponent implements OnInit {
     this.faArrowDown = faArrowAltCircleDown;
   }
   bindModelToForm(model: any, form: FormGroup) {
+    let obj= model as RodSegment;
     const keys = Object.keys(form.controls);
+    form.patchValue({
+      id: obj.id,
+      A: obj.A,
+      S: obj.S,
+      force: obj.force,
+      type: obj.type
+    })
     keys.forEach(key => {
         form.controls[key].valueChanges.subscribe(
             (newValue) => {
@@ -38,6 +46,7 @@ export class SegmentListElementComponent implements OnInit {
                 console.log(newValue)
             }
         )
+        
     });
 }
 
