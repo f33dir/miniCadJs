@@ -3,8 +3,10 @@
       <app-testlist  class="d-flex flex-column flex-grow-1"></app-testlist>
     </div>
     <div class="col-9 d-flex justify-content-center" >
-      <div class="d-flex justify-content-center align-items-center" >
-        <app-rodview [rod]=Rod></app-rodview>
-      </div>
+      <div  style="overflow: scroll;left:0px;right: 0px;top: 0px;bottom: 0px;" class="position-absolute d-flex  justify-content-center">
+        <div class="d-flex justify-content-center align-items-center" >
+          <app-rodview [rod]=Rod></app-rodview>
+        </div>
+      </div>      
     </div>
 </div>

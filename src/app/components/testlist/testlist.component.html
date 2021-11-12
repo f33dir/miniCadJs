@@ -4,10 +4,10 @@
       <div cdkDropList class="example-list flex-grow-1" (cdkDropListDropped)="drop($event)">
     <div class="example-box" *ngFor="let segment of rod.segments" cdkDrag>
       <div *ngIf="segment.type === 'rod';else force">
-        <app-segment-list-element [modelInput]=segment ></app-segment-list-element>
+        <app-segment-list-element [modelInput]=segment (deleteEvent)="deleteElement($event)" ></app-segment-list-element>
       </div>
       <ng-template #force>
-        <app-segment-list-force [modelInput]=segment></app-segment-list-force>
+        <app-segment-list-force [modelInput]=segment (deleteEvent)="deleteElement($event)"></app-segment-list-force>
       </ng-template>
     </div>
   </div>
