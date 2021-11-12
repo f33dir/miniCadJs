@@ -1,33 +1,42 @@
-import { Component, Input, OnInit } from '@angular/core'; 
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'; 
+import { FormControl, FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { RodEntity } from 'src/app/Models/rodentity';
 import { RodSegment } from 'src/app/Models/rodsegment';
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleDown,faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
 selector: 'app-segment-list-element',
   templateUrl: './segment-list-element.component.html',
   styleUrls: ['./segment-list-element.component.css']
 })
 export class SegmentListElementComponent implements OnInit {
+  @Output()
+  deleteEvent = new EventEmitter<number>()
   faArrowDown = faArrowAltCircleDown;
+  faCross = faTrash;
   @Input()
   modelInput! :RodEntity;
   public isCollapsed = true;
   model!:RodSegment
-  formGroup: FormGroup= this.fb.group({
-      id:[''],
-      type:[''],
-      A:[''],
-      S:[''],
-      force:['']})
+  formGroup: FormGroup;
   constructor(private fb: FormBuilder) { 
-    
+    this.formGroup= this.fb.group({
+      id:[Validators.required, this.notAllowed(/^0/)],
+      type:[],
+      A:[Validators.required, this.notAllowed(/^0/)],
+      S:[Validators.required, this.notAllowed(/^0/)],
+      force:[]  
+    });
+  } 
+  notAllowed(input: RegExp): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const forbidden = input.test(control.value);
+      return forbidden ? {notAllowed: {value: control.value}} : null;
+    };
   }
-  
   ngOnInit(): void {
     this.model = this.modelInput as RodSegment;
     this.bindModelToForm(this.model,this.formGroup)
-    this.faArrowDown = faArrowAltCircleDown;
+    // this.faArrowDown = faArrowAltCircleDown;
   }
   bindModelToForm(model: any, form: FormGroup) {
     let obj= model as RodSegment;
@@ -48,6 +57,9 @@ export class SegmentListElementComponent implements OnInit {
         )
         
     });
+    
 }
-
+delete(){
+    this.deleteEvent.emit(this.model.id)
+}
 }

@@ -1,0 +1,24 @@
+.wall-right{
+    border-right: 5px solid black;
+    height: 256px;
+    width: 64px;
+    background: repeating-linear-gradient(
+        45deg,
+    rgb(255, 255, 255),
+    rgb(255, 255, 255) 7px,
+    rgb(0, 0, 0) 7px,
+    rgb(0, 0, 0) 14px
+    )
+}
+.wall-left{
+    border-left: 5px solid black;
+    height: 256px;
+    width: 64px;
+    background: repeating-linear-gradient(
+        45deg,
+    rgb(255, 255, 255),
+    rgb(255, 255, 255) 7px,
+    rgb(0, 0, 0) 7px,
+    rgb(0, 0, 0) 14px
+    )
+}

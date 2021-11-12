@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl } from '@angular/forms';
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleDown,faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Force } from 'src/app/Models/force';
 import { RodEntity } from 'src/app/Models/rodentity';
 @Component({
@@ -9,9 +9,12 @@ import { RodEntity } from 'src/app/Models/rodentity';
   styleUrls: ['./segment-list-force.component.css']
 })
 export class SegmentListForceComponent implements OnInit {
+  @Output()
+  deleteEvent = new EventEmitter<number>()
   public isCollapsed = true;
   model!: Force;
   faArrowDown = faArrowAltCircleDown;
+  faTrash = faTrash;
   formGroup: FormGroup= this.fb.group({
     id:[''],
     type:[''],
@@ -41,5 +44,8 @@ export class SegmentListForceComponent implements OnInit {
             }
         )
     });
+  }
+  delete(){
+    this.deleteEvent.emit(this.model.id);
   }
 }

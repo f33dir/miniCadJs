@@ -1,0 +1,8 @@
+<div *ngIf="status">
+    <div *ngIf="side; else left">
+        <div class="wall-left"></div>
+    </div>
+    <ng-template #left>
+        <div class="wall-right"></div>
+    </ng-template>
+</div>

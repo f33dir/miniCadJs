@@ -26,7 +26,9 @@ import { SegmentListForceComponent } from './components/segment-list-force/segme
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RodviewComponent } from './components/rodview/rodview.component';
 import { RodviewboxComponent } from './components/rodviewbox/rodviewbox.component';
-import { RodviewforceComponent } from './components/rodviewforce/rodviewforce.component'
+import { RodviewforceComponent } from './components/rodviewforce/rodviewforce.component';
+import { SegmentListWallComponent } from './components/segment-list-wall/segment-list-wall.component';
+import { RodviewwallComponent } from './components/rodviewwall/rodviewwall.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,9 @@ import { RodviewforceComponent } from './components/rodviewforce/rodviewforce.co
     SegmentListForceComponent,
     RodviewComponent,
     RodviewboxComponent,
-    RodviewforceComponent
+    RodviewforceComponent,
+    SegmentListWallComponent,
+    RodviewwallComponent
   ],
   imports: [
     BrowserModule,

@@ -2,9 +2,13 @@
 <div class="card " style="width:100%;">
     <div class="card-header p-1 pl-2 " style="line-height: 36px">
         Точечное усилие
+        <button style="float: right;" type="button" class="btn btn-danger btn-xs" (click)="delete()"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><fa-icon [icon]="faTrash"></fa-icon>
+        </button>
         <button style="float: right;" type="button" class="btn btn-primary btn-xs" (click)="isCollapsed = !isCollapsed"
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><fa-icon [icon]="faArrowDown"></fa-icon>
         </button>
+        
     </div>
 
     <div  id="collapseBasic" [collapse]="isCollapsed" class="card-body">

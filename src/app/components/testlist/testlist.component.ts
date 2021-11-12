@@ -41,4 +41,7 @@ export class TestlistComponent implements OnInit {
       
     });
   }
+  deleteElement(id:number){
+    this.construction.deleteElement(id);
+  }
 }

@@ -1,6 +1,7 @@
 import { RodEntity } from "./rodentity";
 
 export class Rod{
+    idCounter = 0;
     segments!: RodEntity[]; 
     tPointLeft!: boolean;
     tPointRight!: boolean;

@@ -1,10 +1,10 @@
 <div class="arrowcont">
     <div *ngIf="model.force>0;else left">
-        <img src="../../../assets/arrow.png" alt="image" class="arrow-right">
+        <img src="assets/arrow.png" alt="image" class="arrow-right">
     </div>
     <ng-template #left>
         <div *ngIf="model.force!=null && model.force!= 0;">
-            <img src="../../../assets/arrow.png" alt="image" class="arrow-left">
+            <img src="assets/arrow.png" alt="image" class="arrow-left">
         </div>
     </ng-template>
 </div>
