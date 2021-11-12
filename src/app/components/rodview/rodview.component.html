@@ -1,6 +1,4 @@
-{{ngOnChange()}}
-<div class="d-flex display: flex!important  flex-direction: row flex-wrap: nowrap align-content: center justify-content: center;">
-    <app-rodviewwall class="d-flex justify-content-center align-items-center" [status]=rod.tPointLeft [side]=false></app-rodviewwall>
+<div class="d-flex">
     <div class="d-flex justify-content-center align-items-center" *ngFor="let seg of rod.segments" >
         <div >   
             <div *ngIf="seg.type === 'rod';else force" >
@@ -13,3 +11,4 @@
     </div>
     <app-rodviewwall class="d-flex justify-content-center align-items-center"[status]=rod.tPointRight [side]=true></app-rodviewwall>
 </div>
+{{ngOnChange()}}
