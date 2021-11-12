@@ -1,8 +1,11 @@
 .sidebar{
+   /*
     background-color: rgb(68, 68, 68);
     height: 100%;
     left:0%;
     width: 100%;
-    position: absolute;   
+    position: absolute;
     z-index: 1000;
+
+    */
 }
