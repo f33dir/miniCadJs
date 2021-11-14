@@ -14,7 +14,8 @@ export class RodviewwallComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // debugger
   }
-
+  onChange(){
+    console.log('fucc');
+  }
 }

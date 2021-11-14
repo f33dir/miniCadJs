@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-textbutton',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./textbutton.component.css']
 })
 export class TextbuttonComponent implements OnInit {
-
+  @Input()
+  textInput!:string;
   constructor() { }
 
   ngOnInit(): void {

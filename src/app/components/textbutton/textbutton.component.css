@@ -1,0 +1,9 @@
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 2px 2px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    color: aliceblue;
+  }

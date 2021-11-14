@@ -1,14 +1,14 @@
-<div class="d-flex rodview">
-    <div class="d-flex justify-content-center align-items-center" *ngFor="let seg of rod.segments" >
-        <div >   
+{{ngOnChange()}}
+<div class="rodview text-nowrap text-center h-100">
+    <app-rodviewwall class="d-inline-block" style="vertical-align: middle;position: relative;top: 50%;margin-top: -250px;" [status]="rod.tPointLeft" [side]=false></app-rodviewwall>
+    <div class="d-inline-block" style="vertical-align: middle;position: relative;top: 50%;margin-top: -250px;" *ngFor="let seg of rod.segments" >
             <div *ngIf="seg.type === 'rod';else force" >
                 <app-rodviewbox  [segment]=seg [minRodA]="minRodA" [minRodS]="minRodS"></app-rodviewbox>
             </div>
             <ng-template #force>
                 <app-rodviewforce [modelInput]=seg ></app-rodviewforce>
             </ng-template>
-        </div>
     </div>
-    <app-rodviewwall class="d-flex justify-content-center align-items-center"[status]=rod.tPointRight [side]=true></app-rodviewwall>
+    <app-rodviewwall class="d-inline-block" style="vertical-align: middle;position: relative;top: 50%;margin-top: -250px;" [status]="rod.tPointRight" [side]=true></app-rodviewwall>
 </div>
-{{ngOnChange()}}
+

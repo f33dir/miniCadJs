@@ -44,4 +44,19 @@ export class TestlistComponent implements OnInit {
   deleteElement(id:number){
     this.construction.deleteElement(id);
   }
+  changeWallLeft(status:boolean){
+    console.log('l')
+    if(!this.rod.tPointRight && !status){
+      this.rod.tPointRight = true;
+    }
+    this.rod.tPointLeft = status;
+
+  }
+  changeWallRight(status:boolean){
+    console.log('r')
+    if(!this.rod.tPointLeft && !status){
+      this.rod.tPointLeft = true;
+    }
+    this.rod.tPointRight = status;
+  }
 }

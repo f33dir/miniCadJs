@@ -1,12 +1,12 @@
- <div class=" flex-grow-1 d-flex">
-    <div class="col-3 sidebar bg-dark pt-2 d-flex flex-column">
-      <app-testlist  class="d-flex flex-column flex-grow-1"></app-testlist>
+<div class=" flex-grow-1 d-flex">
+  <div class="col-3 sidebar bg-dark pt-2 d-flex flex-column">
+    <app-testlist  class="d-flex flex-column flex-grow-1"></app-testlist>
+  </div>
+  <div class="col-9" >
+    <div  style="overflow: scroll;left:0px;right: 0px;top: 0px;bottom: 0px;" class="position-absolute">
+      <app-rodview [rod]=Rod></app-rodview>
     </div>
-    <div class="col-9 d-flex justify-content-center" >
-      <div  style="overflow: scroll;left:0px;right: 0px;top: 0px;bottom: 0px;" class="position-absolute d-flex  justify-content-center">
-        <div class="d-flex justify-content-center align-items-center" >
-          <app-rodview [rod]=Rod></app-rodview>
-        </div>
-      </div>      
-    </div>
+  </div>
 </div>
+
+
