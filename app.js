@@ -10,7 +10,8 @@ const { Menu } = require('electron/main');
         width: 800,
         height: 600,
         webPreferences: {
-          nodeIntegration: true
+          nodeIntegration: true,
+          enableRemoteModule: true
         }
       })
 

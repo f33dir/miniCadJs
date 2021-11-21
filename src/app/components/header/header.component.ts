@@ -15,8 +15,16 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
     if(this._electronService.isElectronApp){
-
+      this._electronService.
     }
+    let event = new MouseEvent('click', {bubbles: false});
+    // this.fileInput.nativeElement.dispatchEvent(event);
   }
 
+  save(){
+
+  }
+  load(){
+
+  }
 }

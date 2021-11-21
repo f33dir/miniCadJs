@@ -5,6 +5,7 @@ import { RodSegment } from '../Models/rodsegment';
 import { Observable , of } from 'rxjs';
 import { Force } from '../Models/force';
 import { time, timeStamp } from 'console';
+import { FileserviceService } from './fileservice.service';
 
 @Injectable({
   providedIn: 'root'
@@ -37,11 +38,40 @@ export class ConstructionmanagerService {
     this.rod.segments.push(f);
   }
   addForce(){
-    let f = new Force();
-    f.id=this.rod.segments.length+1;
-    f.force =1;
-    f.type = "force";
-    this.rod.segments.push(f);
+    let i:number;
+    let fcount = 0;
+    var rcount = 0;
+    for(i=0 ;i<this.rod.segments.length;i++){
+      if (this.rod.segments[i].type == "rod"){
+        rcount++;
+      } else {
+        fcount++;
+      }
+    }
+    let flag = false;
+    if( this.rod.tPointLeft && this.rod.tPointRight){
+      if( rcount>fcount+1){
+        flag=true;
+      }
+    } else {
+      if(rcount>fcount){
+        flag=true;
+      }
+    }
+    i =1;
+    while(i< this.rod.segments.length && (this.rod.segments[i].type!="rod" || this.rod.segments[i-1].type!="rod")){
+      i++;
+    }
+    if(this.rod.segments.length == i && this.rod.tPointLeft == false && this.rod.tPointRight == true){
+      i = 0;
+    }
+    if(flag==true){
+      let f = new Force();
+      f.id=this.rod.segments.length+1;
+      f.force =1;
+      f.type = "force";
+      this.rod.segments.splice(i,0,f);
+    }
   }
   deleteElement(id:number){
     let i = 0;
