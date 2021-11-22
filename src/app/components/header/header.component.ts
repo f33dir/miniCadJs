@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from 'electron';
+import { BrowserWindow, Menu } from 'electron';
 import { ElectronService } from 'ngx-electron';
+import { ConstructionmanagerService } from 'src/app/services/constructionmanager.service';
+import { FileserviceService } from 'src/app/services/fileservice.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,23 +10,21 @@ import { ElectronService } from 'ngx-electron';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _electronService: ElectronService) {
+  constructor( private construction:ConstructionmanagerService, private fs:FileserviceService) {
   }
   knock(){
-    console.log('knocked');
+    // console.log('knocked');
+    // this.fs.dialog.showOpenDialog({properties:['openFile']})
   }
   ngOnInit(): void {
-    if(this._electronService.isElectronApp){
-      this._electronService.
-    }
-    let event = new MouseEvent('click', {bubbles: false});
-    // this.fileInput.nativeElement.dispatchEvent(event);
+    this.knock();
   }
 
   save(){
-
+    this.construction.saveProject();
+    console.log("header")
   }
   load(){
-
+    this.fs.getFile();
   }
 }

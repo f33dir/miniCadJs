@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-textbutton',
@@ -6,11 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./textbutton.component.css']
 })
 export class TextbuttonComponent implements OnInit {
+  @Output() outputClick = new EventEmitter();
   @Input()
   textInput!:string;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onClick(){
+    console.log('1');
+    this.outputClick.emit();
+}
 }

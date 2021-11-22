@@ -1,12 +1,25 @@
 import { Injectable } from '@angular/core';
-import { ElectronService } from 'ngx-electron';
+import { Dialog, IpcMain, IpcRenderer, WebFrame } from 'electron';
+import { ConstructionmanagerService } from './constructionmanager.service';
 @Injectable({
   providedIn: 'root'
 })
 export class FileserviceService {
-  
-  constructor(private electron:ElectronService) {
-    debugger;
-    this.electron
-   }
+  isElectron():boolean{
+    return !!(window  && window.process && window.process.type)
+  }
+  ipcRenderer!:IpcRenderer;
+  webFrame!:WebFrame;
+  dialog!:Dialog;
+  ipcMain!:IpcMain;
+  constructor() {
+    if(this.isElectron()){
+    }
+  }
+  public getFile(){
+    this.ipcRenderer.send("openproject","hi");
+  }
+  public saveProject(json: string){
+    this.ipcRenderer.send("saveproject",json); 
+  }
 }

@@ -11,14 +11,22 @@ import { FileserviceService } from './fileservice.service';
   providedIn: 'root'
 })
 export class ConstructionmanagerService {
-  private text:string = "12343";
-  private comment = of(this.text);
   private rod!:Rod;
   private segments!:Observable<Rod>; 
-  constructor() {
+  constructor(private fs:FileserviceService ) {
     this.rod = new Rod();
     this.rod.tPointLeft=true;
     this.rod.tPointRight=true;
+    if(this.fs/s)
+    this.fs.ipcRenderer = window.require("electron").ipcRenderer;
+      this.fs.webFrame = window.require("electron").webFrame;
+      this.fs.dialog = window.require("electron").dialog;
+      this.fs.ipcMain = window.require("electron").ipcMain;
+      // this.ipcRenderer.send("openproject","hi");
+      this.fs.ipcRenderer.on("openprojectreturn",(event, file)=>{
+        console.log(file);
+        this.loadProject(file);
+      });
   }
   logRod(){
     console.log(this.rod)
@@ -67,7 +75,7 @@ export class ConstructionmanagerService {
     }
     if(flag==true){
       let f = new Force();
-      f.id=this.rod.segments.length+1;
+      f.id=this.rod.idCounter++;
       f.force =1;
       f.type = "force";
       this.rod.segments.splice(i,0,f);
@@ -81,6 +89,15 @@ export class ConstructionmanagerService {
     if(i!=this.rod.segments.length+1){
       this.rod.segments.splice(i,1)
     }
+  }
+  public loadProject(file:object){
+    this.fs.getFile();
+    console.log(file);
+  }
+  public saveProject(){
+    var json = JSON.stringify(this.rod);
+    console.log(json);
+    this.fs.saveProject(json);
   }
 }
  

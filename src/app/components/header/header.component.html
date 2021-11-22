@@ -1,6 +1,6 @@
 <div class="navbar  navbar-dark  bg-dark text-white navbar-light" style="z-index: 10000;">
     <div style="float: left;">
-        <app-textbutton textInput=save></app-textbutton>
-        <app-textbutton textInput=load></app-textbutton>
+        <app-textbutton textInput=save (outputClick)="save()"></app-textbutton>
+        <app-textbutton textInput=load (outputClick)="load()"></app-textbutton>
     </div>
 </div>
