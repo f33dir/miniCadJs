@@ -17,7 +17,7 @@ export class ConstructionmanagerService {
     this.rod = new Rod();
     this.rod.tPointLeft=true;
     this.rod.tPointRight=true;
-    if(this.fs/s)
+    if(this.fs)
     this.fs.ipcRenderer = window.require("electron").ipcRenderer;
       this.fs.webFrame = window.require("electron").webFrame;
       this.fs.dialog = window.require("electron").dialog;
@@ -100,4 +100,3 @@ export class ConstructionmanagerService {
     this.fs.saveProject(json);
   }
 }
- 

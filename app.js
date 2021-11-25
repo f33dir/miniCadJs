@@ -67,7 +67,9 @@ var fs = require('fs');
           { name: "project file", extensions:['mcjp']}
         ]
       }).then((filename)=>{
-        fs.writeFile(filename.filePath,data);
+        fs.writeFile(filename.filePath,data,(err)=>{
+          console.log(err);
+        });
       })
     })
     Menu.setApplicationMenu(null);
