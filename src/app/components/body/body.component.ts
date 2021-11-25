@@ -9,7 +9,7 @@ import { ConstructionmanagerService } from 'src/app/services/constructionmanager
 })
 export class BodyComponent implements OnInit {
 
-  constructor(private construction: ConstructionmanagerService ) { }
+  constructor(public construction: ConstructionmanagerService ) { }
   Rod!: Rod;
   ngOnInit(): void {
     this.construction.getSegments().subscribe((rod)=>{
