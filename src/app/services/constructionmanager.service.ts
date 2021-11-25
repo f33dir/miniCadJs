@@ -17,8 +17,9 @@ export class ConstructionmanagerService {
     this.rod = new Rod();
     this.rod.tPointLeft=true;
     this.rod.tPointRight=true;
-    if(this.fs.isElectron())
-    this.fs.ipcRenderer = window.require("electron").ipcRenderer;
+    if(this.fs.isElectron()){
+
+      this.fs.ipcRenderer = window.require("electron").ipcRenderer;
       this.fs.webFrame = window.require("electron").webFrame;
       this.fs.dialog = window.require("electron").dialog;
       this.fs.ipcMain = window.require("electron").ipcMain;
@@ -27,6 +28,7 @@ export class ConstructionmanagerService {
         console.log(file);
         this.loadProject(file);
       });
+    }
   }
   logRod(){
     console.log(this.rod)
@@ -91,8 +93,9 @@ export class ConstructionmanagerService {
     }
   }
   public loadProject(file:object){
-    this.fs.getFile();
+    // this.fs.getFile();
     console.log(file);
+
   }
   public saveProject(){
     var json = JSON.stringify(this.rod);

@@ -16,10 +16,12 @@ export class TestlistComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     let segs = this.rod;
     let pos = event.currentIndex ;
-    if((pos ==  segs.segments.length-1 || pos == 0) && segs.segments[event.previousIndex].type == "force"){
+    if((pos ==  segs.segments.length-1) && segs.segments[event.previousIndex].type == "force" && this.rod.tPointRight ){
       return;
     }
-    
+    if((pos ==  0) && segs.segments[event.previousIndex].type == "force" && this.rod.tPointLeft ){
+      return;
+    }
     moveItemInArray(this.rod.segments, event.previousIndex, event.currentIndex);
     for(let i = 1;i<segs.segments.length;i++){
       if(segs.segments[i].type == segs.segments[i-1].type && segs.segments[i-1].type== "force"){
