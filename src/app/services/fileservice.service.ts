@@ -13,8 +13,6 @@ export class FileserviceService {
   dialog!:Dialog;
   ipcMain!:IpcMain;
   constructor() {
-    if(this.isElectron()){
-    }
   }
   public getFile(){
     this.ipcRenderer.send("openproject","hi");
