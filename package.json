@@ -1,7 +1,9 @@
 {
   "name": "mini-cad-js",
   "version": "0.0.0",
+  "author": "me",
   "main": "app.js",
+  "description": "desc",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -41,6 +43,7 @@
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "electron": "12",
+    "electron-builder": "^22.14.5",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
