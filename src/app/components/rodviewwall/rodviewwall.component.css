@@ -1,6 +1,6 @@
 .wall-right{
     border-right: 5px solid black;
-    height: 256px;
+    height: 500px;
     width: 64px;
     background: repeating-linear-gradient(
         45deg,
@@ -12,7 +12,7 @@
 }
 .wall-left{
     border-left: 5px solid black;
-    height: 256px;
+    height: 500px;
     width: 64px;
     background: repeating-linear-gradient(
         45deg,
